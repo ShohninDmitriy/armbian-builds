@@ -2,7 +2,7 @@ name: Build Train
 on:
   # on every monthly 1 at 0:01
   schedule:
-    - cron:  '01 0 1 * *'
+    - cron:  '01 1 1 * *'
 
   # build a new release on push a new config file
   push:
