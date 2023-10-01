@@ -22,7 +22,7 @@ concurrency:
 jobs:
   setup:
     name: Create Matrix
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
 
   release:
     name: Create Release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       id: ${{ steps.release.outputs.id }}
       tag_name: ${{ steps.time.outputs.time }}
@@ -102,7 +102,7 @@ jobs:
   build-armbian:
     name: Armbian
     needs: [setup, release]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -171,7 +171,7 @@ jobs:
   build-orangepi:
     name: Orangepi
     needs: [ setup, release ]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -229,7 +229,7 @@ jobs:
   finish:
     name: Finish BuildTrain
     needs: [release, build-armbian, build-orangepi]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Publish Release
         uses: StuYarrow/publish-release@v1
@@ -242,7 +242,7 @@ jobs:
     name: Cleanup BuildTrain
     needs: [release, build-armbian, build-orangepi]
     if: ${{ always() }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Delete drafts
         uses: hugo19941994/delete-draft-releases@v1.0.0
