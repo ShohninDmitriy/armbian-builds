@@ -1,3 +1,4 @@
 BOARD=orangepizero3
 BRANCH=next
 MEM_TYPE=1500MB
+BOOTFS_TYPE=fat
