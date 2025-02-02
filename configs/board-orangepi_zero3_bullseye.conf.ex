@@ -1,3 +1,0 @@
-# ARMBIAN_BRANCH="main"
-BOARD=orangepizero3
-BOOTFS_TYPE=fat

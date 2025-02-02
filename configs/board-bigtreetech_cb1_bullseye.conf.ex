@@ -1,3 +1,0 @@
-# ARMBIAN_BRANCH="main"
-BOARD=bigtreetech-cb1
-BOOTFS_TYPE=fat
