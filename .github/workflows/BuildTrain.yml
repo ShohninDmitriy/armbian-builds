@@ -104,7 +104,7 @@ jobs:
   build-armbian:
     name: Armbian
     needs: [setup, release]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04-arm
     strategy:
       fail-fast: false
       matrix:
@@ -127,6 +127,9 @@ jobs:
           cd $WORKSPACE/build/output/images/
           mv *.img armbian-${{ matrix.configfile }}.img
           mv *.txt armbian-${{ matrix.configfile }}.txt
+
+      - name: Fix BOOT partition
+        uses: ./build-configs/actions/fix-boot-partition
 
       - name: Compressing Image
         run: |
@@ -174,7 +177,7 @@ jobs:
   build-orangepi:
     name: Orangepi
     needs: [ setup, release ]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04-arm
     strategy:
       fail-fast: false
       matrix:
@@ -196,6 +199,9 @@ jobs:
           WORKSPACE=$(echo ${{ github.workspace }})
           cd $WORKSPACE/build/output/images/
           mv */*.img ./orangepi-${{ matrix.configfile }}.img
+
+      - name: Fix BOOT partition
+        uses: ./build-configs/actions/fix-boot-partition
 
       - name: Compressing Image
         run: |
