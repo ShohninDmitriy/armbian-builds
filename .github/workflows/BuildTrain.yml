@@ -255,7 +255,7 @@ jobs:
       needs.release.result == 'success' &&
       needs.build-armbian.result == 'success' &&
       (needs.build-orangepi.result == 'success' || needs.build-orangepi.result == 'skipped')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Publish Release
         uses: eregon/publish-release@v1
