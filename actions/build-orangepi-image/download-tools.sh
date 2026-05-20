@@ -7,7 +7,7 @@ webseed() {
   local MIRRORS=(
     "https://os.mainsail.xyz/_toolchain"
     "https://dl.armbian.com/_toolchain"
-    "http://www.iplaystore.cn/upload/"
+    "http://www.iplaystore.cn/upload"
   )
 
   if [[ "${path}" =~ ^/ky ]]; then
