@@ -37,7 +37,7 @@ runs:
         echo "orangepi_branch=${ORANGEPI_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Checkout Custom Copy Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 1
         repository: ${{ steps.config.outputs.orangepi_repository }}
