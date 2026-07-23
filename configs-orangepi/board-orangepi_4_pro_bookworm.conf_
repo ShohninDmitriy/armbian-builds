@@ -1,2 +1,1 @@
 BOARD=orangepi4pro
-BOOTFS_TYPE="fat"
