@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - "master"
+      - "master1"
     paths:
       - "configs/*"
 
